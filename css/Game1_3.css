@@ -1,0 +1,151 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 10px;
+}
+#pop_star {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(../img/bg.2b1e9f1c.jpg);
+    background-size: contain;
+    font-size: 0px;
+    position: relative;
+}
+.score{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+}
+#targetScore{
+    animation: targetScore 1s cubic-bezier(0, 0.75, 0.3, 1.01) forwards;
+}
+
+#nowScore{
+    right: -23rem;
+    animation: targetScore 1s cubic-bezier(0, 0.75, 0.3, 1.01) 1.2s forwards;
+}
+#level{
+    left:-100%;
+    animation: level 1s cubic-bezier(0, 0.75, 0.3, 1.01) 2.2s forwards;
+}
+#targetScore>span,
+#nowScore>span,
+#level>span{
+   font-size: 2rem;
+   color: white;
+   font-style: italic;
+}
+#targetScore,#nowScore,#selectScore,#level {
+    width: 100%;
+    height: 5rem;
+    background-size: cover;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(255, 116, 26);
+    line-height: 5rem;
+    position: relative;
+}
+#level{
+    height: 3rem;
+    line-height: 3rem;
+}
+@keyframes targetScore{
+    0%{
+        left: -26rem;
+    }
+    100%{
+        left:0rem;
+    }
+}
+@keyframes nowScore{
+    0%{
+        right: -23rem;
+    }
+    100%{
+        right:0rem;
+    }
+}
+@keyframes star {
+    0%{
+        opacity: 0;
+        transform: scale(0)
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+@keyframes level{
+    0%{
+        left:-100%;
+    }
+    100%{
+        left:0%;
+    }
+}
+#selectScore {
+    color: white;
+    opacity: 0;
+}
+
+
+
+
+#stars{
+    width: 100%;
+    padding-bottom: 100%;
+    position: absolute;
+    bottom: 8rem;
+    /* border: 1px solid black; */
+}
+/* 通关提示 */
+.clearance{
+    position: absolute;
+    width: 75%;
+    height: 8.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    cursor: pointer;
+}
+.clearance img{
+    width: 100%;
+    height: 100%;
+}
+/* 好，很好，非常好 */
+.performance{
+    position: absolute;
+    width: 20%;
+    height: 3.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    /* transition: opacity 1s; */
+    /* animation: performance 1s linear backwards; */
+    cursor: pointer;
+}
+.performance>img{
+    width: 100%;
+    height: 100%;
+}
+@keyframes performance{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
